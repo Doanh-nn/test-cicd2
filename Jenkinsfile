@@ -9,8 +9,8 @@ pipeline {
         stage('push-iamge') {
             steps {
                 withDockerRegistry(credentialsId: 'harbor-registry', url: 'https://harbor.mobio.io/demo/') {
-                    sh 'docker build -t https://harbor.mobio.io/demo/centos/cicd:v1 .'
-                    sh 'docker push https://harbor.mobio.io/demo/centos/cicd:v1'
+                    sh 'docker build -t harbor.mobio.io/demo/centos/cicd:v1 .'
+                    sh 'docker push harbor.mobio.io/demo/centos/cicd:v1'
                 }
             }
         }
